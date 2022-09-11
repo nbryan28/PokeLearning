@@ -313,6 +313,7 @@
             this.adventureBox.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.adventureBox.Enabled = false;
             this.adventureBox.Font = new System.Drawing.Font("Gill Sans MT", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.adventureBox.ForeColor = System.Drawing.Color.Black;
             this.adventureBox.Location = new System.Drawing.Point(634, 22);
             this.adventureBox.Multiline = true;
             this.adventureBox.Name = "adventureBox";

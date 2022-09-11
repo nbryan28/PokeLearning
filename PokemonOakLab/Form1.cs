@@ -30,6 +30,7 @@ namespace PokemonOakLab
             try
             {
                 pokedexImage.Image = new Bitmap(Constants.pathImage + pokemonName + ".png");
+                adventureBox.Text = "you have selected " + pokemonName;
             }
             catch (Exception ex)
             {
@@ -78,7 +79,8 @@ namespace PokemonOakLab
                 this.pokeInfo.Text = x;
             }
 
-            engineText.storyText += (s, e) => adventureBox.Text = "you have selected " + x;
+            adventureBox.Text = "you have selected " + x;
+            //  engineText.storyText += (s, e) => adventureBox.Text = "you have selected " + x;
 
         }
 
