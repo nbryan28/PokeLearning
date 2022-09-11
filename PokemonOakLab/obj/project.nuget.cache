@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "sjWcF76w3RvPXKWud+GF8i4OKxkbKWd09j/6gVFVEkswBoSGEIp+kxjgW9NDT0uNI20M8lzJ9SA7YXEW/GuxiQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\n_bry\\source\\repos\\PokemonOakLab\\PokemonOakLab\\PokemonOakLab.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\n_bry\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}
