@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\n_bry\\source\\repos\\PokemonOakLab\\PokemonOakLab\\PokemonOakLab.csproj": {}
+    "C:\\source\\PokeLearning\\PokemonOakLab\\PokemonOakLab.csproj": {}
   },
   "projects": {
-    "C:\\Users\\n_bry\\source\\repos\\PokemonOakLab\\PokemonOakLab\\PokemonOakLab.csproj": {
+    "C:\\source\\PokeLearning\\PokemonOakLab\\PokemonOakLab.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\n_bry\\source\\repos\\PokemonOakLab\\PokemonOakLab\\PokemonOakLab.csproj",
+        "projectUniqueName": "C:\\source\\PokeLearning\\PokemonOakLab\\PokemonOakLab.csproj",
         "projectName": "PokemonOakLab",
-        "projectPath": "C:\\Users\\n_bry\\source\\repos\\PokemonOakLab\\PokemonOakLab\\PokemonOakLab.csproj",
+        "projectPath": "C:\\source\\PokeLearning\\PokemonOakLab\\PokemonOakLab.csproj",
         "packagesPath": "C:\\Users\\n_bry\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\n_bry\\source\\repos\\PokemonOakLab\\PokemonOakLab\\obj\\",
+        "outputPath": "C:\\source\\PokeLearning\\PokemonOakLab\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\n_bry\\AppData\\Roaming\\NuGet\\NuGet.Config",
