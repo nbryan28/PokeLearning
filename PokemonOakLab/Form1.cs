@@ -1,5 +1,6 @@
 using Newtonsoft.Json;
 using PokemonOakLab.Modules.Constants;
+using PokemonOakLab.Modules.Engines;
 using PokemonOakLab.Modules.Pokemon;
 using PokemonOakLab.Modules.PokemonTypes;
 using System.Runtime.CompilerServices;
@@ -10,6 +11,7 @@ namespace PokemonOakLab
     {
         public static string pokemonName = "";
         public PokeBag myBag;
+        public StoryModeEngine engineText;
 
         public Form1()
         {
@@ -17,6 +19,7 @@ namespace PokemonOakLab
 
             InitPokemons();
 
+            engineText = new StoryModeEngine(); 
             myBag = new PokeBag();
            
             this.InitializeBAG();
@@ -27,6 +30,7 @@ namespace PokemonOakLab
             try
             {
                 pokedexImage.Image = new Bitmap(Constants.pathImage + pokemonName + ".png");
+                adventureBox.Text = "you have selected " + pokemonName;
             }
             catch (Exception ex)
             {
@@ -54,6 +58,8 @@ namespace PokemonOakLab
 
         private void ShowPokeData(object sender, EventArgs e)
         {
+
+            
             string x = (string)(sender as PictureBox).Tag;
             var selectedPoke = myBag.IChooseYou(x);
 
@@ -72,6 +78,9 @@ namespace PokemonOakLab
             {
                 this.pokeInfo.Text = x;
             }
+
+            adventureBox.Text = "you have selected " + x;
+            //  engineText.storyText += (s, e) => adventureBox.Text = "you have selected " + x;
 
         }
 
@@ -96,7 +105,10 @@ namespace PokemonOakLab
             }
         }
 
-        
+        private void yesButton_Click(object sender, EventArgs e)
+        {
+            engineText.ProcessText();
+        }
     }
 
     public class PokeJson
