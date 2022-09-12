@@ -32,6 +32,8 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.noButton = new System.Windows.Forms.Button();
+            this.yesButton = new System.Windows.Forms.Button();
             this.myTeam = new System.Windows.Forms.Panel();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
@@ -49,15 +51,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pokeInfo = new System.Windows.Forms.TextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.adventureBox = new System.Windows.Forms.TextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.yesButton = new System.Windows.Forms.Button();
-            this.noButton = new System.Windows.Forms.Button();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.myTeam.SuspendLayout();
@@ -105,12 +106,35 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.pokeInfo);
             this.panel1.Controls.Add(this.pictureBox2);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.adventureBox);
             this.panel1.Font = new System.Drawing.Font("Gill Sans MT", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.panel1.Location = new System.Drawing.Point(20, 22);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1401, 605);
             this.panel1.TabIndex = 3;
+            // 
+            // noButton
+            // 
+            this.noButton.BackColor = System.Drawing.Color.Brown;
+            this.noButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.noButton.Location = new System.Drawing.Point(756, 213);
+            this.noButton.Name = "noButton";
+            this.noButton.Size = new System.Drawing.Size(92, 43);
+            this.noButton.TabIndex = 31;
+            this.noButton.Text = "No";
+            this.noButton.UseVisualStyleBackColor = false;
+            // 
+            // yesButton
+            // 
+            this.yesButton.BackColor = System.Drawing.Color.Teal;
+            this.yesButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.yesButton.Location = new System.Drawing.Point(637, 213);
+            this.yesButton.Name = "yesButton";
+            this.yesButton.Size = new System.Drawing.Size(92, 43);
+            this.yesButton.TabIndex = 30;
+            this.yesButton.Text = "Yes";
+            this.yesButton.UseVisualStyleBackColor = false;
+            this.yesButton.Click += new System.EventHandler(this.yesButton_Click);
             // 
             // myTeam
             // 
@@ -283,19 +307,19 @@
             this.pictureBox2.TabIndex = 18;
             this.pictureBox2.TabStop = false;
             // 
-            // textBox1
+            // adventureBox
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.adventureBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.textBox1.Enabled = false;
-            this.textBox1.Font = new System.Drawing.Font("Gill Sans MT", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.textBox1.Location = new System.Drawing.Point(634, 22);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textBox1.Size = new System.Drawing.Size(712, 175);
-            this.textBox1.TabIndex = 0;
+            this.adventureBox.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.adventureBox.Font = new System.Drawing.Font("Gill Sans MT", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.adventureBox.ForeColor = System.Drawing.Color.Black;
+            this.adventureBox.Location = new System.Drawing.Point(634, 22);
+            this.adventureBox.Multiline = true;
+            this.adventureBox.Name = "adventureBox";
+            this.adventureBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.adventureBox.Size = new System.Drawing.Size(712, 175);
+            this.adventureBox.TabIndex = 0;
             // 
             // tabControl1
             // 
@@ -358,27 +382,11 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // yesButton
+            // backgroundWorker1
             // 
-            this.yesButton.BackColor = System.Drawing.Color.Teal;
-            this.yesButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.yesButton.Location = new System.Drawing.Point(637, 213);
-            this.yesButton.Name = "yesButton";
-            this.yesButton.Size = new System.Drawing.Size(92, 43);
-            this.yesButton.TabIndex = 30;
-            this.yesButton.Text = "Yes";
-            this.yesButton.UseVisualStyleBackColor = false;
-            // 
-            // noButton
-            // 
-            this.noButton.BackColor = System.Drawing.Color.Brown;
-            this.noButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.noButton.Location = new System.Drawing.Point(756, 213);
-            this.noButton.Name = "noButton";
-            this.noButton.Size = new System.Drawing.Size(92, 43);
-            this.noButton.TabIndex = 31;
-            this.noButton.Text = "No";
-            this.noButton.UseVisualStyleBackColor = false;
+            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
+            this.backgroundWorker1.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.backgroundWorker1_ProgressChanged);
+            this.backgroundWorker1.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker1_RunWorkerCompleted);
             // 
             // Form1
             // 
@@ -426,7 +434,7 @@
         private MenuStrip menuStrip1;
         private ToolStripMenuItem openToolStripMenuItem;
         private Panel panel1;
-        private TextBox textBox1;
+        private TextBox adventureBox;
         private Button button1;
         private Label label2;
         private ComboBox pokeList;
@@ -452,5 +460,6 @@
         private OpenFileDialog openFileDialog1;
         private Button noButton;
         private Button yesButton;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }
