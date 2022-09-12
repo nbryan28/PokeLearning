@@ -3,6 +3,7 @@ using PokemonOakLab.Modules.Constants;
 using PokemonOakLab.Modules.Engines;
 using PokemonOakLab.Modules.Pokemon;
 using PokemonOakLab.Modules.PokemonTypes;
+using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
 namespace PokemonOakLab
@@ -17,11 +18,12 @@ namespace PokemonOakLab
         {
             InitializeComponent();
 
+            backgroundWorker1.DoWork += new DoWorkEventHandler(backgroundWorker1_DoWork);
+
             InitPokemons();
 
             engineText = new StoryModeEngine(); 
             myBag = new PokeBag();
-           
             this.InitializeBAG();
         }
 
@@ -88,6 +90,8 @@ namespace PokemonOakLab
         {
             ComboBox comboBox = (ComboBox)sender;
             pokemonName = (string)comboBox.SelectedItem;
+
+            
         }
 
         private void InitPokemons()
@@ -105,9 +109,42 @@ namespace PokemonOakLab
             }
         }
 
-        private void yesButton_Click(object sender, EventArgs e)
+        private async void yesButton_Click(object sender, EventArgs e)
         {
-            engineText.ProcessText();
+            // engineText.ProcessText();
+            if (!backgroundWorker1.IsBusy)
+            {
+                backgroundWorker1.RunWorkerAsync();
+            }
+
+        }
+
+        private void backgroundWorker1_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
+        {
+            int i = 0;
+            while (true)
+            {
+                adventureBox.Invoke(new MethodInvoker(delegate
+                {
+                    adventureBox.Text = adventureBox.Text + Environment.NewLine + "Processing " + i;
+                    i++;
+
+                }));
+
+                Thread.Sleep(3000);
+            }
+           
+
+        }
+
+        private void backgroundWorker1_ProgressChanged(object sender, System.ComponentModel.ProgressChangedEventArgs e)
+        {
+
+        }
+
+        private void backgroundWorker1_RunWorkerCompleted(object sender, System.ComponentModel.RunWorkerCompletedEventArgs e)
+        {
+
         }
     }
 

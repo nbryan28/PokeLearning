@@ -58,6 +58,7 @@
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.myTeam.SuspendLayout();
@@ -311,7 +312,6 @@
             this.adventureBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.adventureBox.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.adventureBox.Enabled = false;
             this.adventureBox.Font = new System.Drawing.Font("Gill Sans MT", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.adventureBox.ForeColor = System.Drawing.Color.Black;
             this.adventureBox.Location = new System.Drawing.Point(634, 22);
@@ -381,6 +381,12 @@
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // backgroundWorker1
+            // 
+            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
+            this.backgroundWorker1.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.backgroundWorker1_ProgressChanged);
+            this.backgroundWorker1.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker1_RunWorkerCompleted);
             // 
             // Form1
             // 
@@ -454,5 +460,6 @@
         private OpenFileDialog openFileDialog1;
         private Button noButton;
         private Button yesButton;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }
